@@ -367,7 +367,7 @@ function addPlc()
                 <li>Lỗi đổi tại nhà trong 1 ngày</li>
                 <li>Hỗ trợ suốt thời gian sử dụng.
                     <br>Hotline:
-                    <a href="tel:0354.837.258" style="color: #288ad6;">0354.837.258</a>
+                    <a href="tel:012 345 6789" style="color: #288ad6;">0123 456 789</a>
                 </li>
             </ul>
         </section>
