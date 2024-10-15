@@ -57,7 +57,7 @@
     <section>
 		<?php 
 			addHeader(); 
-			addHome();
+			// addHome();
 		?>
 	</section>
 
@@ -93,7 +93,7 @@
 
     // Hướng dẫn nộp hồ sơ
     $application_guidelines = [
-        "Gửi CV về email: qtran2003@gmail.com",
+        "Gửi CV về email: qtranvo2003@gmail.com",
         "Hoặc nộp trực tiếp tại cửa hàng: 280 An Dương Vương, phường 4, quận 5, TP.HCM, Việt Nam",
         "Liên hệ hotline: 0123-456-789 để biết thêm chi tiết"
     ];
@@ -190,21 +190,8 @@
                 left: 0;
             }
 
-            /* Định dạng footer */
-            .footer {
-                text-align: center;
-                margin-top: 20px;
-                font-size: 0.9em;
-                color: #95a5a6;
-            }
-
-            /* Điều chỉnh footer khi di chuột */
-            .footer:hover {
-                color: #7f8c8d;
-            }
-
             /* Thêm hiệu ứng cho nút nộp hồ sơ */
-            .apply-btn {
+            .btn {
                 display: block;
                 width: 200px;
                 padding: 15px;
@@ -220,7 +207,7 @@
                 transition: background-color 0.3s ease-in-out;
             }
 
-            .apply-btn:hover {
+            .btn:hover {
                 background-color: #2ecc71;
             }
 
@@ -253,10 +240,11 @@
     <body>
         <div class="container">
             <h1><?php echo $title; ?></h1>
+            <p><strong>Cửa hàng:</strong> <?php echo $position; ?></p>
             <p><strong>Vị trí:</strong> <?php echo $position; ?></p>
             <p><strong>Địa điểm:</strong> <?php echo $location; ?></p>
             <p><strong>Lương:</strong> <?php echo $salary; ?></p>
-            <p><strong>Thời gian làm việc:</strong> <?php echo $working_hours; ?></p>
+            <p><strong>Thời gian hoạt động:</strong> <?php echo $working_hours; ?></p>
 
             <h2>Yêu cầu công việc</h2>
             <ul>
@@ -285,13 +273,13 @@
                 ?>
             </ul>
 
-            <a href="mailto:tuyendung@xoai-store.com" class="apply-btn">Nộp hồ sơ ngay</a>
+            <a href="mailto:qtranvo2003@gmail.com" class="btn">Nộp hồ sơ ngay</a>
 
         </div>
     </body>
     </html>
 
-    <br><br><br>
+    <br>
 
     <?php
     addContainTaiKhoan();

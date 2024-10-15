@@ -54,172 +54,229 @@
 
     <?php addTopNav(); ?>
 
-    <br><br>
+    <section>
+		<?php 
+			addHeader(); 
+			// addHome();
+		?>
+	</section>
 
-</html>
+    <?php
 
-<!DOCTYPE html>
-<html>
+    // Cấu hình tiêu đề trang
+    $title = "Thông tin liên hệ";
 
-<head>
-    <title>Giới thiệu nhóm Xoài</title>
-    <link rel="stylesheet" href="/js/sakura.min.css">
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
 
-        body {
-            font-family: Arial, sans-serif;
-            padding: 20px;
-            text-align: center;
-        }
+    // Nội dung trang
+    $store_name = "Xoài Store - Cửa hàng máy đọc sách";
+    $location = "280 An Dương Vương, phường 4, quận 5, TP.HCM, Việt Nam";
+    $working_hours = "từ 9:00 AM đến 8:00 PM";
 
-        h1 {
-            font-size: 36px;
-            margin-bottom: 20px;
-        }
+    // Yêu cầu công việc
+    $job_requirements = [
+        "Tốt nghiệp THPT trở lên",
+        "Có kinh nghiệm bán hàng là một lợi thế",
+        "Kỹ năng giao tiếp tốt và thái độ làm việc tích cực",
+        "Đam mê với sản phẩm công nghệ, đặc biệt là máy đọc sách",
+        "Chịu được áp lực công việc, có trách nhiệm và chủ động",
+    ];
 
-        h2 {
-            font-size: 24px;
-            margin-bottom: 10px;
-        }
+    // Quyền lợi
+    $job_benefits = [
+        "Môi trường làm việc thân thiện, năng động",
+        "Lương thưởng hấp dẫn, có cơ hội thăng tiến",
+        "Được đào tạo chuyên sâu về sản phẩm máy đọc sách",
+        "Hưởng chế độ bảo hiểm theo quy định",
+        "Thưởng doanh số theo quý"
+    ];
 
-        p {
-            font-size: 16px;
-            line-height: 1.5;
-            margin-bottom: 20px;
-        }
+    // Hướng dẫn nộp hồ sơ
+    $application_guidelines = [
+        "Gửi CV về email: qtranvo2003@gmail.com",
+        "Hoặc nộp trực tiếp tại cửa hàng: 280 An Dương Vương, phường 4, quận 5, TP.HCM, Việt Nam",
+        "Liên hệ hotline: 0123-456-789 để biết thêm chi tiết"
+    ];
+    ?>
 
-        ul {
-            margin-bottom: 20px;
-        }
+    <!DOCTYPE html>
+    <html lang="vi">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title><?php echo $title; ?></title>
+        <style>
+            /* Đặt lại margin và padding cơ bản cho toàn bộ trang */
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
 
-        li {
-            font-size: 16px;
-            line-height: 1.5;
-            margin-bottom: 10px;
-            list-style-type: none;
-        }
+            /* Cài đặt phông chữ và màu nền chung cho trang */
+            body {
+                font-family: 'Roboto', sans-serif;
+                background-color: #f9f9f9;
+                color: #333;
+                line-height: 1.6;
+                margin: 0;
+            }
 
-        strong {
-            font-weight: bold;
-            background-image: url('member-icon.png');
-            background-repeat: no-repeat;
-            background-size: contain;
-            background-position: right center;
-            padding-right: 35px;
-        }
+            /* Định dạng container của trang */
+            .container {
+                width: 80%;
+                margin: 50px auto;
+                background-color: #fff;
+                padding: 40px;
+                border-radius: 10px;
+                box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+                transition: all 0.3s ease-in-out;
+            }
 
-        .contact-icons {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 20px;
-        }
+            /* Hiệu ứng khi di chuột vào container */
+            .container:hover {
+                box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+            }
 
-        .contact-icon {
-            margin-right: 10px;
-            width: 30px;
-            height: 30px;
-            background-repeat: no-repeat;
-            background-position: center center;
-            background-size: contain;
-            cursor: pointer;
-        }
+            /* Định dạng tiêu đề */
+            h1 {
+                color: #2c3e50;
+                font-size: 2.5em;
+                text-align: center;
+                margin-bottom: 20px;
+                text-transform: uppercase;
+                letter-spacing: 2px;
+                font-weight: 700;
+            }
 
-        .contact-icon.facebook {
-            background-image: url('./img/facebook-icon.png');
-        }
+            h2 {
+                color: #2980b9;
+                font-size: 1.8em;
+                margin-bottom: 15px;
+                text-transform: capitalize;
+                font-weight: 600;
+            }
 
-        .contact-icon.zalo {
-            background-image: url('./img/zalo-icon.png');
-        }
+            /* Định dạng đoạn văn và nội dung chung */
+            p {
+                font-size: 1.1em;
+                margin-bottom: 15px;
+                color: #555;
+            }
 
-        .contact-icon.email {
-            background-image: url('./img/contact-icon.png');
-        }
+            /* Định dạng danh sách yêu cầu và quyền lợi */
+            ul {
+                list-style-type: none;
+                padding-left: 20px;
+                margin-bottom: 30px;
+            }
 
-        .box {
-            max-width: 30%;
-            max-height: 30%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
+            ul li {
+                font-size: 1.1em;
+                padding-left: 25px;
+                position: relative;
+                margin-bottom: 10px;
+                color: #7f8c8d;
+            }
 
-        .box img {
-            max-width: 60%;
-            height: auto;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-    </style>
-</head>
+            /* Thêm biểu tượng trước mỗi dòng trong danh sách */
+            ul li::before {
+                content: "\2022";
+                color: #27ae60;
+                font-weight: bold;
+                display: inline-block;
+                width: 20px;
+                position: absolute;
+                left: 0;
+            }
 
-<body>
-    <script src="/js/sakura.min.js"></script>
-    <script>
-        var sakura = new Sakura('body');
-    </script>
-    <h1>THÔNG TIN THÀNH VIÊN NHÓM <img width="5%" src="./img/mango.png" alt="XOÀI"></h1>
+            /* Thêm hiệu ứng cho nút nộp hồ sơ */
+            .apply-btn {
+                display: block;
+                width: 200px;
+                padding: 15px;
+                background-color: #27ae60;
+                color: white;
+                text-align: center;
+                border-radius: 5px;
+                text-transform: uppercase;
+                font-size: 1.1em;
+                font-weight: bold;
+                margin: 20px auto;
+                text-decoration: none;
+                transition: background-color 0.3s ease-in-out;
+            }
 
-    <ul>
-        <center>
-        </center><br>
-        <li><strong>
-                Bùi Văn Hiệp
-            </strong> <br>MSSV 44.01.704.021, sinh viên năm 3
-            chuyên ngành Khoa học máy tính.</li><br>
-        <center>
-            <li>
-        </center><br>
+            .apply-btn:hover {
+                background-color: #2ecc71;
+            }
+
+            /* Phong cách responsive cho màn hình nhỏ hơn */
+            @media (max-width: 768px) {
+                .container {
+                    width: 90%;
+                    padding: 20px;
+                }
+
+                h1 {
+                    font-size: 2em;
+                }
+
+                h2 {
+                    font-size: 1.5em;
+                }
+
+                ul li {
+                    font-size: 1em;
+                }
+
+                .apply-btn {
+                    width: 100%;
+                }
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="container">
+            <h1><?php echo $title; ?></h1>
+            <p><strong>Cửa hàng:</strong> <?php echo $store_name; ?></p>
+            <p><strong>Địa điểm:</strong> <?php echo $location; ?></p>
+            <p><strong>Thời gian hoạt động:</strong> <?php echo $working_hours; ?></p>
+            <br>
+            <p style="font-style: italic; text-decoration: underline;">Mọi thắc mắc về sản phẩm xin liên hệ:</p>
+
+            <h2>Võ Thị Quế Trân</h2>
+            <ul>
+                <li>Email: <a style="color: blue; text-decoration: underline;" href="mailto:qtranvo2003@gmail.com">qtranvo2003@gmail.com</a></li>
+                <li>Phone: <a style="color: blue; text-decoration: underline;" href="tel:012 345 6789">012 345 6789</a></li>
+                <li>Github: <a style="color: blue; text-decoration: underline;" target="_blank" href="https://github.com/qtranvox">github.com/qtranvox</a></li>
+            </ul>
+
+            <h2>Bùi Văn Hiệp</h2>
+            <ul>
+                <li>Email: <a style="color: blue; text-decoration: underline;" href="mailto:4401704021@student.hcmue.edu.vn">4401704021@student.hcmue.edu.vn</a></li>
+                <li>Phone: <a style="color: blue; text-decoration: underline;" href="tel:098 765 4321">098 765 4321</a></li>
+                <li>Github: <a style="color: blue; text-decoration: underline;" target="_blank" href="https://github.com/kltm2018">github.com/kltm2018</a></li>
+            </ul>
+
         </div>
-        <strong>
-            Võ Thị Quế Trân</strong><br> MSSV 47.01.104.235, sinh viên năm 2.
-        </li>
-    </ul>
+    </body>
+    </html>
 
+    <br>
 
-    <p>Mọi thông tin chi tiết xin liên hệ: </p>
-    <div class="contact-icons">
-        <a href="https://www.facebook.com/kltm2018" target="_blank">
-            <div class="contact-icon facebook"></div>
-        </a>
-        <a href="tel:035.483.7258" target="_blank">
-            <div class="contact-icon zalo"></div>
-        </a>
-        <a href="mailto:4401704021@student.hcmue.edu.vn" target="_blank">
-            <div class="contact-icon email"></div>
-        </a>
-    </div>
-</body>
+    <?php
+    addContainTaiKhoan();
+    addPlc();
+    ?>
 
-</html>
+    <div class="footer">
+		<?php addFooter(); ?>
+	</div>
 
-
-
-<i class="fa fa-arrow-up" id="goto-top-page" onclick="gotoTop()"></i>
-<i class="fa fa-arrow-down" id="goto-bot-page" onclick="gotoBot()"></i>
+    <i class="fa fa-arrow-up" id="goto-top-page" onclick="gotoTop()"></i>
+    <i class="fa fa-arrow-down" id="goto-bot-page" onclick="gotoBot()"></i>
 
 </body>
 
 </html>
-
-</html>
-<br><br><br>
-
-
-
-<?php
-addContainTaiKhoan();
-addPlc();
-?>
-
-<i class="fa fa-arrow-up" id="goto-top-page" onclick="gotoTop()"></i>
-<i class="fa fa-arrow-down" id="goto-bot-page" onclick="gotoBot()"></i>
-
-</body>
