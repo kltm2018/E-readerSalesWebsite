@@ -72,30 +72,6 @@
     $location = "280 An Dương Vương, phường 4, quận 5, TP.HCM, Việt Nam";
     $working_hours = "từ 9:00 AM đến 8:00 PM";
 
-    // Yêu cầu công việc
-    $job_requirements = [
-        "Tốt nghiệp THPT trở lên",
-        "Có kinh nghiệm bán hàng là một lợi thế",
-        "Kỹ năng giao tiếp tốt và thái độ làm việc tích cực",
-        "Đam mê với sản phẩm công nghệ, đặc biệt là máy đọc sách",
-        "Chịu được áp lực công việc, có trách nhiệm và chủ động",
-    ];
-
-    // Quyền lợi
-    $job_benefits = [
-        "Môi trường làm việc thân thiện, năng động",
-        "Lương thưởng hấp dẫn, có cơ hội thăng tiến",
-        "Được đào tạo chuyên sâu về sản phẩm máy đọc sách",
-        "Hưởng chế độ bảo hiểm theo quy định",
-        "Thưởng doanh số theo quý"
-    ];
-
-    // Hướng dẫn nộp hồ sơ
-    $application_guidelines = [
-        "Gửi CV về email: qtranvo2003@gmail.com",
-        "Hoặc nộp trực tiếp tại cửa hàng: 280 An Dương Vương, phường 4, quận 5, TP.HCM, Việt Nam",
-        "Liên hệ hotline: 0123-456-789 để biết thêm chi tiết"
-    ];
     ?>
 
     <!DOCTYPE html>
