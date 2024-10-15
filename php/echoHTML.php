@@ -256,7 +256,9 @@ function addFooter()
     <div class="copy-right">
         <p>
             All rights reserved © 2022 - ' . date("Y") . ' - Designed by
-            <span style="color: #eee; font-weight: bold">Xoài cute</span>
+            <span style="color: #eee; font-weight: bold">
+                <a href="https://github.com/qtranvox">Tran Vo</a>
+            </span>
         </p>
     </div>';
 }
