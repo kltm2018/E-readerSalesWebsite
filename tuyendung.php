@@ -54,87 +54,256 @@
 
     <?php addTopNav(); ?>
 
-    <br><br>
-    <!DOCTYPE html>
-    <html>
+    <section>
+		<?php 
+			addHeader(); 
+			addHome();
+		?>
+	</section>
 
+    <?php
+
+    // Cấu hình tiêu đề trang
+    $title = "Tuyển dụng Nhân viên bán hàng";
+
+    // Nội dung trang
+    $store_name = "Xoài Store - Cửa hàng máy đọc sách";
+    $position = "Nhân viên bán hàng";
+    $location = "280 An Dương Vương, phường 4, quận 5, TP.HCM, Việt Nam";
+    $salary = "7 - 10 triệu VNĐ/tháng";
+    $working_hours = "Xoay ca 8 tiếng/ngày, 6 ngày/tuần";
+
+    // Yêu cầu công việc
+    $job_requirements = [
+        "Tốt nghiệp THPT trở lên",
+        "Có kinh nghiệm bán hàng là một lợi thế",
+        "Kỹ năng giao tiếp tốt và thái độ làm việc tích cực",
+        "Đam mê với sản phẩm công nghệ, đặc biệt là máy đọc sách",
+        "Chịu được áp lực công việc, có trách nhiệm và chủ động",
+    ];
+
+    // Quyền lợi
+    $job_benefits = [
+        "Môi trường làm việc thân thiện, năng động",
+        "Lương thưởng hấp dẫn, có cơ hội thăng tiến",
+        "Được đào tạo chuyên sâu về sản phẩm máy đọc sách",
+        "Hưởng chế độ bảo hiểm theo quy định",
+        "Thưởng doanh số theo quý"
+    ];
+
+    // Hướng dẫn nộp hồ sơ
+    $application_guidelines = [
+        "Gửi CV về email: qtran2003@gmail.com",
+        "Hoặc nộp trực tiếp tại cửa hàng: 280 An Dương Vương, phường 4, quận 5, TP.HCM, Việt Nam",
+        "Liên hệ hotline: 0123-456-789 để biết thêm chi tiết"
+    ];
+    ?>
+
+    <!DOCTYPE html>
+    <html lang="vi">
     <head>
-        <title>Tuyển dụng nhân viên bán hàng tại cửa hàng sách Xoài Store</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title><?php echo $title; ?></title>
         <style>
-            body {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                justify-content: center;
+            /* Đặt lại margin và padding cơ bản cho toàn bộ trang */
+            * {
                 margin: 0;
                 padding: 0;
-                height: 100vh;
+                box-sizing: border-box;
             }
 
-            code {
-                display: block;
+            /* Cài đặt phông chữ và màu nền chung cho trang */
+            body {
+                font-family: 'Roboto', sans-serif;
+                background-color: #f9f9f9;
+                color: #333;
+                line-height: 1.6;
+                margin: 0;
+            }
+
+            /* Định dạng container của trang */
+            .container {
+                width: 80%;
+                margin: 50px auto;
+                background-color: #fff;
+                padding: 40px;
+                border-radius: 10px;
+                box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+                transition: all 0.3s ease-in-out;
+            }
+
+            /* Hiệu ứng khi di chuột vào container */
+            .container:hover {
+                box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+            }
+
+            /* Định dạng tiêu đề */
+            h1 {
+                color: #2c3e50;
+                font-size: 2.5em;
                 text-align: center;
-                margin: auto;
-                font-size: 1.2rem;
-                background-color: #f8f8f8;
-                padding: 20px;
+                margin-bottom: 20px;
+                text-transform: uppercase;
+                letter-spacing: 2px;
+                font-weight: 700;
+            }
+
+            h2 {
+                color: #2980b9;
+                font-size: 1.8em;
+                margin-bottom: 15px;
+                text-transform: capitalize;
+                font-weight: 600;
+            }
+
+            /* Định dạng đoạn văn và nội dung chung */
+            p {
+                font-size: 1.1em;
+                margin-bottom: 15px;
+                color: #555;
+            }
+
+            /* Định dạng danh sách yêu cầu và quyền lợi */
+            ul {
+                list-style-type: none;
+                padding-left: 20px;
+                margin-bottom: 30px;
+            }
+
+            ul li {
+                font-size: 1.1em;
+                padding-left: 25px;
+                position: relative;
+                margin-bottom: 10px;
+                color: #7f8c8d;
+            }
+
+            /* Thêm biểu tượng trước mỗi dòng trong danh sách */
+            ul li::before {
+                content: "\2022";
+                color: #27ae60;
+                font-weight: bold;
+                display: inline-block;
+                width: 20px;
+                position: absolute;
+                left: 0;
+            }
+
+            /* Định dạng footer */
+            .footer {
+                text-align: center;
+                margin-top: 20px;
+                font-size: 0.9em;
+                color: #95a5a6;
+            }
+
+            /* Điều chỉnh footer khi di chuột */
+            .footer:hover {
+                color: #7f8c8d;
+            }
+
+            /* Thêm hiệu ứng cho nút nộp hồ sơ */
+            .apply-btn {
+                display: block;
+                width: 200px;
+                padding: 15px;
+                background-color: #27ae60;
+                color: white;
+                text-align: center;
                 border-radius: 5px;
-                box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+                text-transform: uppercase;
+                font-size: 1.1em;
+                font-weight: bold;
+                margin: 20px auto;
+                text-decoration: none;
+                transition: background-color 0.3s ease-in-out;
+            }
+
+            .apply-btn:hover {
+                background-color: #2ecc71;
+            }
+
+            /* Phong cách responsive cho màn hình nhỏ hơn */
+            @media (max-width: 768px) {
+                .container {
+                    width: 90%;
+                    padding: 20px;
+                }
+
+                h1 {
+                    font-size: 2em;
+                }
+
+                h2 {
+                    font-size: 1.5em;
+                }
+
+                ul li {
+                    font-size: 1em;
+                }
+
+                .apply-btn {
+                    width: 100%;
+                }
             }
         </style>
     </head>
 
     <body>
-        <code>
-            <!DOCTYPE html>
-            <html>
+        <div class="container">
+            <h1><?php echo $title; ?></h1>
+            <p><strong>Vị trí:</strong> <?php echo $position; ?></p>
+            <p><strong>Địa điểm:</strong> <?php echo $location; ?></p>
+            <p><strong>Lương:</strong> <?php echo $salary; ?></p>
+            <p><strong>Thời gian làm việc:</strong> <?php echo $working_hours; ?></p>
 
-            <head>
-                <title>Tuyển dụng nhân viên bán hàng tại cửa hàng sách Xoài Store</title>
-            </head>
+            <h2>Yêu cầu công việc</h2>
+            <ul>
+                <?php
+                foreach ($job_requirements as $requirement) {
+                    echo "<li>$requirement</li>";
+                }
+                ?>
+            </ul>
 
-            <body>
-                <h1>Tuyển dụng nhân viên bán hàng tại cửa hàng sách Xoài Store</h1>
-                <h2>Yêu cầu</h2>
-                <ul>
-                    <li>Có kinh nghiệm bán hàng từ 1 năm trở lên</li>
-                    <li>Tốt nghiệp trung cấp trở lên</li>
-                    <li>Yêu thích và có kiến thức về sách</li>
-                    <li>Kỹ năng giao tiếp tốt</li>
-                    <li>Chịu khó và nhiệt tình trong công việc</li>
-                </ul>
-                <h2>Quyền lợi</h2>
-                <ul>
-                    <li>Lương cơ bản: 5-7 triệu đồng/tháng</li>
-                    <li>Hoạt động trong môi trường năng động và chuyên nghiệp</li>
-                    <li>Cơ hội phát triển nghề nghiệp</li>
-                </ul>
-                <p>Nếu bạn quan tâm đến vị trí này, vui lòng gửi email tới <a href="mailto:satmonmun@gmail.com">satmonmun@gmail.com</a> với tiêu đề "Tuyển dụng nhân viên bán hàng".</p>
-            </body>
+            <h2>Quyền lợi</h2>
+            <ul>
+                <?php
+                foreach ($job_benefits as $benefit) {
+                    echo "<li>$benefit</li>";
+                }
+                ?>
+            </ul>
 
-            </html>
+            <h2>Hướng dẫn nộp hồ sơ</h2>
+            <ul>
+                <?php
+                foreach ($application_guidelines as $guideline) {
+                    echo "<li>$guideline</li>";
+                }
+                ?>
+            </ul>
 
+            <a href="mailto:tuyendung@xoai-store.com" class="apply-btn">Nộp hồ sơ ngay</a>
 
-
-            <i class="fa fa-arrow-up" id="goto-top-page" onclick="gotoTop()"></i>
-            <i class="fa fa-arrow-down" id="goto-bot-page" onclick="gotoBot()"></i>
-
+        </div>
     </body>
-
     </html>
 
-</html>
-<br><br><br>
+    <br><br><br>
 
+    <?php
+    addContainTaiKhoan();
+    addPlc();
+    ?>
 
+    <div class="footer">
+		<?php addFooter(); ?>
+	</div>
 
-<?php
-addContainTaiKhoan();
-addPlc();
-?>
-
-<i class="fa fa-arrow-up" id="goto-top-page" onclick="gotoTop()"></i>
-<i class="fa fa-arrow-down" id="goto-bot-page" onclick="gotoBot()"></i>
+    <i class="fa fa-arrow-up" id="goto-top-page" onclick="gotoTop()"></i>
+    <i class="fa fa-arrow-down" id="goto-bot-page" onclick="gotoBot()"></i>
 
 </body>
 
