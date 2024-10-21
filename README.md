@@ -37,7 +37,7 @@ To run the project locally, clone the repository and set up a local server with 
 ### Installation Steps:
 1. Clone the repository:
    ```
-   git clone https://github.com/qtranvox/webbanmaydocsach.git
+   git clone https://github.com/kltm2018/E-readerSalesWebsite.git
 2. Set up a local server with PHP (XAMPP, WAMP, etc.).
 3. Import the database from `doan.sql` into MySQL.
 4. Run the website on your local server.
